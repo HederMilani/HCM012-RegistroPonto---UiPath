@@ -98,16 +98,16 @@
         <av:PointCollection x:Key="ConnectorLocation">104.6,179.8 134.6,179.8 134.6,171.4 200,171.4</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Verify systems and conections to access" DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="585.6,1484" sap2010:WorkflowViewState.IdRef="State_4">
+    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Verify systems and conections to access" DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="585.6,1676" sap2010:WorkflowViewState.IdRef="State_4">
       <State.Entry>
-        <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="540.8,1064" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="540.8,1256" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <TryCatch.Variables>
             <Variable x:TypeArguments="ss:SecureString" Name="PostgresPass" />
             <Variable x:TypeArguments="x:String" Name="PostgresUser" />
             <Variable x:TypeArguments="x:Boolean" Name="IsGetAsset" />
           </TryCatch.Variables>
           <TryCatch.Try>
-            <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="540.8,720" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="540.8,912" sap2010:WorkflowViewState.IdRef="Sequence_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -132,9 +132,6 @@
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
               <Sequence DisplayName="Directory" sap:VirtualizedContainerService.HintSize="510.4,120" sap2010:WorkflowViewState.IdRef="Sequence_45">
-                <Sequence.Variables>
-                  <Variable x:TypeArguments="x:Boolean" Name="IsDir" />
-                </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -183,7 +180,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
-              <If sap:VirtualizedContainerService.HintSize="510.4,456" sap2010:WorkflowViewState.IdRef="If_8">
+              <If sap:VirtualizedContainerService.HintSize="510.4,384" sap2010:WorkflowViewState.IdRef="If_8">
                 <If.Condition>
                   <InArgument x:TypeArguments="x:Boolean">
                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_99">IsGetAsset</CSharpValue>
@@ -239,7 +236,7 @@
                             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_101">SeniorUser</CSharpValue>
                           </InArgument>
                           <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsLoged">
-                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_40">isLoged</CSharpReference>
+                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_40">IsApplication</CSharpReference>
                           </OutArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_UrlPortal">
                             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_102">UrlPortal</CSharpValue>
@@ -255,7 +252,43 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="480,96" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,24" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <If sap:VirtualizedContainerService.HintSize="510.4,264" sap2010:WorkflowViewState.IdRef="If_9">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_105">!IsDir || !IsGetAsset ||!IsDb || !IsApplication</CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="480,96" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Throw sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="Throw_1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <InArgument x:TypeArguments="s:Exception">
+                        <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_106">new Exception("Erro na inicialização da Automação")</CSharpValue>
+                      </InArgument>
+                    </Throw>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="480,96" sap2010:WorkflowViewState.IdRef="Sequence_47">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -918,7 +951,8 @@
       <Variable x:TypeArguments="x:Int32" sap2010:Annotation.AnnotationText="Used to control the number of consecutive system exceptions." Default="0" Name="ConsecutiveSystemExceptions" />
       <Variable x:TypeArguments="ui:DatabaseConnection" Name="DataBaseConnection" />
       <Variable x:TypeArguments="x:Boolean" Name="IsDb" />
-      <Variable x:TypeArguments="x:Boolean" Name="isLoged" />
+      <Variable x:TypeArguments="x:Boolean" Name="IsApplication" />
+      <Variable x:TypeArguments="x:Boolean" Name="IsDir" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>
