@@ -1,0 +1,6 @@
+{
+  "Name": "HCM012-RegistroPonto",
+  "ProjectType": "Process",
+  "Description": "HCM012-RegistroPonto",
+  "MainFile": "Main.xaml"
+}
