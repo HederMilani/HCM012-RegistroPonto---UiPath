@@ -28,6 +28,8 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Security</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Database</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -81,9 +83,11 @@
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="[Process title]&#xA;[Process description]&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="1180,697.6" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="[Process title]&#xA;[Process description]&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="1220.8,697.6" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -100,12 +104,10 @@
           <TryCatch.Variables>
             <Variable x:TypeArguments="ss:SecureString" Name="PostgresPass" />
             <Variable x:TypeArguments="x:String" Name="PostgresUser" />
+            <Variable x:TypeArguments="x:Boolean" Name="IsGetAsset" />
           </TryCatch.Variables>
           <TryCatch.Try>
             <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="540.8,600" sap2010:WorkflowViewState.IdRef="Sequence_1">
-              <Sequence.Variables>
-                <Variable x:TypeArguments="x:Boolean" Name="IsGetAsset" />
-              </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -132,10 +134,10 @@
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetAssets - Invoke Workflow File (Framework\GetAssets.xaml)" sap:VirtualizedContainerService.HintSize="510.4,48" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Framework\GetAssets.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_SeniorPass">
-                    <CSharpReference x:TypeArguments="ss:SecureString">SeniorPass</CSharpReference>
+                    <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_41">SeniorPass</CSharpReference>
                   </OutArgument>
                   <OutArgument x:TypeArguments="x:String" x:Key="out_SeniorUser">
-                    <CSharpReference x:TypeArguments="x:String">SeniorUser</CSharpReference>
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_42">SeniorUser</CSharpReference>
                   </OutArgument>
                   <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsGetAsset">
                     <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_37">IsGetAsset</CSharpReference>
@@ -172,11 +174,29 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="OpenDataBase - Invoke Workflow File (Data\OpenDataBase.xaml)" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Data\OpenDataBase.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <OutArgument x:TypeArguments="ui:DatabaseConnection" x:Key="out_DataBaseConection">
+                            <CSharpReference x:TypeArguments="ui:DatabaseConnection" sap2010:WorkflowViewState.IdRef="CSharpReference`1_43">DataBaseConnection</CSharpReference>
+                          </OutArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="in_PassDb">
+                            <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_103">PostgresPass</CSharpValue>
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_UserDb">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_104">PostgresUser</CSharpValue>
+                          </InArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsDB">
+                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_44">IsDb</CSharpReference>
+                          </OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
                     </Sequence>
                     <Sequence DisplayName="Applications" sap:VirtualizedContainerService.HintSize="480,120" sap2010:WorkflowViewState.IdRef="Sequence_42">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="x:Boolean" Name="isLoged" />
-                      </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -858,6 +878,9 @@
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Transaction ID used for information and logging purposes. Ideally, the ID should be unique for each transaction. " Name="TransactionID" />
       <Variable x:TypeArguments="sd:DataTable" sap2010:Annotation.AnnotationText="Used in case transactions are stored in a DataTable, for example, after being retrieved from a spreadsheet." Name="dt_TransactionData" />
       <Variable x:TypeArguments="x:Int32" sap2010:Annotation.AnnotationText="Used to control the number of consecutive system exceptions." Default="0" Name="ConsecutiveSystemExceptions" />
+      <Variable x:TypeArguments="ui:DatabaseConnection" Name="DataBaseConnection" />
+      <Variable x:TypeArguments="x:Boolean" Name="IsDb" />
+      <Variable x:TypeArguments="x:Boolean" Name="isLoged" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>
