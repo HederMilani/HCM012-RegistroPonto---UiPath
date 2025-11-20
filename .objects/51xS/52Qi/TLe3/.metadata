@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome Plataforma de Gestão  Senior Sistemas",
+  "Type": "Screen",
+  "Id": "TLe3c0Oc50ePSockC9V5LQ",
+  "Reference": "gXilONmsJ0GAl1mUM33vlQ/TLe3c0Oc50ePSockC9V5LQ",
+  "ParentRef": "gXilONmsJ0GAl1mUM33vlQ/52QiA9sJAk6hYXgvIB_6zQ",
+  "Created": "2025-11-20T14:44:56.0218605Z",
+  "Updated": "2025-11-20T14:44:56.0218605Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

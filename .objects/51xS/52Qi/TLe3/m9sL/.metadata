@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Próximo",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "m9sLl3DWXUuwPUvjcUy_aA",
+  "Reference": "gXilONmsJ0GAl1mUM33vlQ/m9sLl3DWXUuwPUvjcUy_aA",
+  "ParentRef": "gXilONmsJ0GAl1mUM33vlQ/TLe3c0Oc50ePSockC9V5LQ",
+  "Created": "2025-11-20T15:04:39.3683842Z",
+  "Updated": "2025-11-20T15:04:39.3683842Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

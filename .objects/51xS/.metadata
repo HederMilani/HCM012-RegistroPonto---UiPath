@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome Plataforma de Gestão  Senior Sistemas",
+  "Type": "App",
+  "Id": "51xS6l-HF0uLuFbemqkhMQ",
+  "Reference": "gXilONmsJ0GAl1mUM33vlQ/51xS6l-HF0uLuFbemqkhMQ",
+  "Created": "2025-11-20T14:44:55.2100665Z",
+  "Updated": "2025-11-20T14:44:55.2100665Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

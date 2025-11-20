@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Nome do usuário",
+  "Type": "Element",
+  "TaxonomyType": "Password",
+  "Id": "clY7fba4Q0eO3gOS8hrIDA",
+  "Reference": "gXilONmsJ0GAl1mUM33vlQ/clY7fba4Q0eO3gOS8hrIDA",
+  "ParentRef": "gXilONmsJ0GAl1mUM33vlQ/TLe3c0Oc50ePSockC9V5LQ",
+  "Created": "2025-11-20T15:06:43.1750487Z",
+  "Updated": "2025-11-20T15:06:43.1750487Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Acesse a sua conta",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "fgrHcPkKhky-T14PC3Ww8Q",
+  "Reference": "gXilONmsJ0GAl1mUM33vlQ/fgrHcPkKhky-T14PC3Ww8Q",
+  "ParentRef": "gXilONmsJ0GAl1mUM33vlQ/TLe3c0Oc50ePSockC9V5LQ",
+  "Created": "2025-11-20T14:49:39.7785826Z",
+  "Updated": "2025-11-20T14:49:39.7785826Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

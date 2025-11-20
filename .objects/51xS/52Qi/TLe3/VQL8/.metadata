@@ -1,0 +1,13 @@
+﻿{
+  "Name": "× Não foi possível real…",
+  "Type": "Element",
+  "Id": "VQL8idFie0i6c9v6yw8nmw",
+  "Reference": "gXilONmsJ0GAl1mUM33vlQ/VQL8idFie0i6c9v6yw8nmw",
+  "ParentRef": "gXilONmsJ0GAl1mUM33vlQ/TLe3c0Oc50ePSockC9V5LQ",
+  "Created": "2025-11-20T15:21:29.2562924Z",
+  "Updated": "2025-11-20T15:21:29.2562924Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

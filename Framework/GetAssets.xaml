@@ -1,25 +1,10 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="OpenAllApplication" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetAssets" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_PassLogin" Type="InArgument(ss:SecureString)">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
-    <x:Property Name="in_UserLogin" Type="InArgument(x:String)">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
-    <x:Property Name="out_IsLoged" Type="OutArgument(x:Boolean)">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
-    <x:Property Name="in_UrlPortal" Type="InArgument(x:String)">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
+    <x:Property Name="out_SeniorPass" Type="OutArgument(ss:SecureString)" />
+    <x:Property Name="out_SeniorUser" Type="OutArgument(x:String)" />
+    <x:Property Name="out_IsGetAsset" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_PostgresPass" Type="OutArgument(ss:SecureString)" />
+    <x:Property Name="out_PostgresUser" Type="OutArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
@@ -48,10 +33,13 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
-      <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.Serialization</x:String>
-      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Reflection</x:String>
       <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -77,75 +65,94 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
-      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
-      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
       <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
-      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Security.Permissions</AssemblyReference>
-      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
-      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
-      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="OpenAllApplication" sap:VirtualizedContainerService.HintSize="1105,710.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetAssets" sap:VirtualizedContainerService.HintSize="1105,806.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="All Application" sap:VirtualizedContainerService.HintSize="540.8,686.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Get Assets to Orchestrator" sap:VirtualizedContainerService.HintSize="540.8,782.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="510.4,614.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="510.4,710.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <TryCatch.Try>
-          <Sequence DisplayName="Tentar" sap:VirtualizedContainerService.HintSize="510.4,240" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Tentar" sap:VirtualizedContainerService.HintSize="510.4,336" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="480,192" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+            <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope Get Asset" sap:VirtualizedContainerService.HintSize="480,240" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:01:00">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Ação" sap:VirtualizedContainerService.HintSize="480,96" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Ação" sap:VirtualizedContainerService.HintSize="480,144" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="OpenBrowser - Invoke Workflow File (Application\OpenBrowser.xaml)" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Application\OpenBrowser.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_PassLogin">
-                          <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">in_PassLogin</CSharpValue>
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_UserLogin">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">in_UserLogin</CSharpValue>
-                        </InArgument>
-                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsLoged">
-                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">out_IsLoged</CSharpReference>
+                    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="PostgresDataBaseCredential" CacheStrategy="None" DisplayName="Get Credential" FolderPath="Milani" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1">
+                      <ui:GetRobotCredential.Password>
+                        <OutArgument x:TypeArguments="ss:SecureString">
+                          <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">out_PostgresPass</CSharpReference>
                         </OutArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_UrlPortal">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">in_UrlPortal</CSharpValue>
-                        </InArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
+                      </ui:GetRobotCredential.Password>
+                      <ui:GetRobotCredential.Username>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">out_PostgresUser</CSharpReference>
+                        </OutArgument>
+                      </ui:GetRobotCredential.Username>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                    </ui:InvokeWorkflowFile>
+                    </ui:GetRobotCredential>
+                    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="SeniorPontoCredential" CacheStrategy="None" DisplayName="Get Credential" FolderPath="Milani" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2">
+                      <ui:GetRobotCredential.Password>
+                        <OutArgument x:TypeArguments="ss:SecureString">
+                          <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">out_SeniorPass</CSharpReference>
+                        </OutArgument>
+                      </ui:GetRobotCredential.Password>
+                      <ui:GetRobotCredential.Username>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">out_SeniorUser</CSharpReference>
+                        </OutArgument>
+                      </ui:GetRobotCredential.Username>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:GetRobotCredential>
                   </Sequence>
                 </ActivityAction>
               </ui:RetryScope.ActivityBody>
@@ -153,6 +160,22 @@
                 <ActivityFunc x:TypeArguments="x:Boolean" />
               </ui:RetryScope.Condition>
             </ui:RetryScope>
+            <ui:MultipleAssign DisplayName="Assign IsGetAssets" sap:VirtualizedContainerService.HintSize="480,48" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">out_IsGetAsset</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+            </ui:MultipleAssign>
           </Sequence>
         </TryCatch.Try>
         <TryCatch.Catches>
@@ -161,7 +184,7 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="480,144" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="480,144" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -170,7 +193,7 @@
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn">
                   <ui:LogMessage.Message>
                     <InArgument x:TypeArguments="x:Object">
-                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">exception.Message</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">exception.Message</CSharpValue>
                     </InArgument>
                   </ui:LogMessage.Message>
                   <sap:WorkflowViewStateService.ViewState>
@@ -179,13 +202,13 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:LogMessage>
-                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                <ui:MultipleAssign DisplayName="Assign IsGetAssets" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                   <ui:MultipleAssign.AssignOperations>
                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
                         <ui:AssignOperation.To>
                           <OutArgument x:TypeArguments="x:Boolean">
-                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">out_IsLoged</CSharpReference>
+                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">out_IsGetAsset</CSharpReference>
                           </OutArgument>
                         </ui:AssignOperation.To>
                         <ui:AssignOperation.Value>
@@ -200,7 +223,7 @@
           </Catch>
         </TryCatch.Catches>
         <TryCatch.Finally>
-          <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="480,96" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="480,96" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>

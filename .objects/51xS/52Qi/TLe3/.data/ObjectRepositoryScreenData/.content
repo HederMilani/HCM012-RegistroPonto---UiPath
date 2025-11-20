@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="k1Hh3cD0RECxoJRX9OlmTw" Reference="gXilONmsJ0GAl1mUM33vlQ/TLe3c0Oc50ePSockC9V5LQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="-9, -9, 1938, 1048" BrowserType="Chrome" ContentHash="QhRMW9VzO024jgzIAGxF9A" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACBUlEQVRYR8WXPUscURSG10LxK52xSW3hP7DWkE5ik1ibgAF1CxsbDSHGiHYm/0GsRCRNEhQCFtaJWlqIiNqqqPkA87ycc7K6OEL03vWFh2X23D3vO3dm7p0t3Upvy6IZPsCgH3sxt8ysCd7BL/gCLeADcqpiPgVncAEb8BB8UC5dby4WoAF8YA4Vm+9BN/jAHCo234dnUAc+OLXMXNM7CdXmzyG7uXgJJ1BDc8nM22EdamwuWQBd458g899QhqiJJ9D37ziprOk0xNlvwSOImu6NRTgEzUriENbwI0SAb2ArntEG30E1PY6JQ1iz1xABdqAToqa94CtEPXEIa9QDRxAmc6A1IeqvoHphShTCmmjKP0EYyExrQoSIBeocsoV4DLtQHUKXQHV9vocMMxEN7HFU0zDQGc9A3JSaiTdwCjFGoRPsE8UhtD4oRMxEI1SHWIYH4M1uq+IQmokXEHWF0I0adS3hWqy80V1UHGIFWiHqHbANUR8Cb3JXXR/iB9gbkaFLsgoRYBS8QQpdDXEA81Dv3wkt15sQAUbAf5xKZqQdsRe6/DgYgz8gc92otlllVSXQAGhzirNfg8wvrMXmx9APNiaLis21Ko5Dxrflm821i9p+kU0W4CnoSbgXc03vEtTYXLIAl9+IamguWQCZfQb9QZ3wYx+QWxZADMMs2I743yqV/gI5ZQdwADG8VQAAAABJRU5ErkJggg==" Reference="gXilONmsJ0GAl1mUM33vlQ/TLe3c0Oc50ePSockC9V5LQ" Selector="&lt;html app='chrome.exe' /&gt;" Version="V2">
+      <TargetApp.Arguments>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.Arguments>
+      <TargetApp.Url>
+        <p:InArgument x:TypeArguments="x:String">
+          <p:CSharpValue x:TypeArguments="x:String">in_UrlPortal</p:CSharpValue>
+        </p:InArgument>
+      </TargetApp.Url>
+      <TargetApp.WorkingDirectory>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.WorkingDirectory>
+      <imageRef attrName="InformativeScreenshot" originalValue="37b0ab708a5a056af8f9518f655cdea5.jpg" xmlns="">0y2YbtqeqE0G_EoWOuXUkqg</imageRef>
+    </TargetApp>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData DefaultValue="https://platform.senior.com.br/senior-x/#" IsVariable="False" Name="in_UrlPortal" />
+    </scg:List>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

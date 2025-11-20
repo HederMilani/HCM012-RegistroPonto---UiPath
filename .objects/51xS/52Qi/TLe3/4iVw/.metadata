@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Marcação de ponto",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "4iVwJsh_t0qOnarQBA3doA",
+  "Reference": "gXilONmsJ0GAl1mUM33vlQ/4iVwJsh_t0qOnarQBA3doA",
+  "ParentRef": "gXilONmsJ0GAl1mUM33vlQ/TLe3c0Oc50ePSockC9V5LQ",
+  "Created": "2025-11-20T15:16:34.5223053Z",
+  "Updated": "2025-11-20T15:16:34.5223053Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

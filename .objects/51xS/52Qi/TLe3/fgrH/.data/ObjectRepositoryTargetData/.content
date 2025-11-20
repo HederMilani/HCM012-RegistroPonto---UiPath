@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Xtf8zuMC9kKUGtZB48HiIA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="platform.senior.com.br/login" CVScreenId="2d12dcfc-e213-408c-8efb-8fc42f542630" CvElementArea="1479, 563, 323, 46" CvType="InputBox" DesignTimeRectangle="1481, 564, 320, 43" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='username-input-field' tag='INPUT' type='email' class='form-control placeholder-no-fix' placeholder='usuario@dominio.com.br' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="ed386a1b-f760-482e-926a-7152d45f26fd" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Plataforma de Gestão | Senior Sistemas' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="2d12dcfc-e213-408c-8efb-8fc42f542630" CvTextArea="1504, 520, 221, 22" CvTextArgument="Acesse a sua conta" CvType="Text" DesignTimeRectangle="1507, 517, 219, 28" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='login-form' tag='SPAN' type='' class='' aaname='Acesse a sua conta' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Acesse a sua conta' /&gt;" Guid="0078b1f3-d169-4de6-bda1-286949e6423d" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="ed6fc44acef49a80a1fb923b0b1c52eb.png" xmlns="">042b1QcHspEa4r_W3nlWa6A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="UxTmu7vIUU2PuSjqNtD8Lg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="platform.senior.com.br/login" CVScreenId="b4955b25-db04-4e20-bbcd-9a7c3a2ebea1" CvElementArea="1428, 624, 376, 46" CvTextArea="1582, 637, 67, 16" CvTextArgument="Próximo" CvType="Button" DesignTimeRectangle="1432, 626, 369, 42" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='nextBtn' tag='BUTTON' /&gt;" Guid="93d7ab19-974a-49b8-bb9e-a4bd87e4e344" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Plataforma de Gestão | Senior Sistemas' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="7dc514e7b6fd840540b0d95002005351.png" xmlns="">0YuCCBHgOREavLLW1nyPIOg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="0pKr__PBnUuKolh57KqvHw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="platform.senior.com.br/login" CVScreenId="1d5dbcf8-a0d3-406a-80cc-5fb97618a920" CvElementArea="1479, 569, 275, 46" CvType="InputBox" DesignTimeRectangle="1481, 570, 271, 43" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='password-input-field' tag='INPUT' /&gt;" Guid="ac58b3e0-0a0a-4474-9a3c-6fcbcfb3c15e" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Plataforma de Gestão | Senior Sistemas' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="1d5dbcf8-a0d3-406a-80cc-5fb97618a920" CvTextArea="1431, 504, 150, 17" CvTextArgument="Nome do usuário:" CvType="Text" DesignTimeRectangle="1432, 501, 369, 25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='username-readonly-container' tag='SPAN' type='' class='username-readonly-title' aaname='Nome do usuário:' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Nome do usuário:' /&gt;" Guid="d770b578-aaf5-47a5-8bfa-4b6601234db8" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="35b666c93d788a1e976851b3998ecece.png" xmlns="">0m5ED-kAI2kS4SSZRvLxG5g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

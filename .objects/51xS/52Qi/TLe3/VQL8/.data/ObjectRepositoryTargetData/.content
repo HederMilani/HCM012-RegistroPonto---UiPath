@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="C3Su_EJ4xkeO1kt0r_IqZA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="platform.senior.com.br/login" DesignTimeRectangle="1410, 482, 413, 139" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='message_div' tag='DIV' class='alert alert-danger' /&gt;" Guid="61e5223e-b6f2-4def-9578-f902945a2c21" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Plataforma de Gestão | Senior Sistemas' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="4818c9de8c09d698b3726a5999f2343d.png" xmlns="">0L1wIDF1C-USOJdSJxqxyUw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
